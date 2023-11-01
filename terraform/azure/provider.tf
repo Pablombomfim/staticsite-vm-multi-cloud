@@ -1,25 +1,18 @@
 terraform {
   required_providers {
-    # azapi = {
-    #   source  = "azure/azapi"
-    #   version = ">= 1.9"
-    # }
     azurerm = {
       source  = "hashicorp/azurerm"
       version = ">= 3.78.0"
     }
-    # random = {
-    #   source  = "hashicorp/random"
-    #   version = ">= 3.5"
-    # }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-staticsite-vm-tf"
-    storage_account_name = "staticsitevmkbtf001"
+    resource_group_name  = "estadoterraform"
+    storage_account_name = "eminemvstimmaia"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
   }
 }
+
 
 provider "azurerm" {
   features {
@@ -29,6 +22,3 @@ provider "azurerm" {
   }
   skip_provider_registration = true
 }
-
-# provider "azapi" {
-# }
