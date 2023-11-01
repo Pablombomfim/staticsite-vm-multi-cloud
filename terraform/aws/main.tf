@@ -3,7 +3,7 @@ module "rede" {
     rede_cidr   = "${var.rede_cidr}"
     subnet_cidr = "${var.subnet_cidr}"
 }
-
+//chamar modulo de rede
 module "compute" {
     source     = "./modules/compute"
     rede_id    = "${module.rede.vpc_id}"
