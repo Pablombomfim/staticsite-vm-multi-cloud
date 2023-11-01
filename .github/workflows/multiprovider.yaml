@@ -43,6 +43,12 @@ jobs:
     - name: Step 06 - Terraform Validate
       run : terraform -chdir=./terraform/aws validate
 
+    - name: Step add 01 - Download Checkov
+      run : pip3 install -U checkov
+
+    - name: Step add 02 - Run Checkov
+      run : checkov -d ./terraform
+
     - name: Step 07 - Terraform Plan
       run : terraform -chdir=./terraform/aws plan -input=false -out tfplan
       # run : terraform -chdir=./terraform/aws plan -input=false -destroy -out tfplan
@@ -85,6 +91,12 @@ jobs:
 
     - name: Step 06 - Terraform Validate
       run : terraform -chdir=./terraform/azure validate
+
+    - name: Step add 01 - Download Checkov
+      run : pip3 install -U checkov
+
+    - name: Step add 02 - Run Checkov
+      run : checkov -d ./terraform
 
     - name: Step 07 - Terraform Plan
       run : terraform -chdir=./terraform/azure plan -input=false -out tfplan
